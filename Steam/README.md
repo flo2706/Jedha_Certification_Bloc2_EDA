@@ -29,7 +29,7 @@ Votre mission : **réaliser une analyse exploratoire des jeux Steam** afin de mi
 
 ---
 
-### 🖼️ Portée de l’analyse
+### Portée de l’analyse
 
 - Analyse de données issues de la **marketplace Steam**
 - Données semi-structurées stockées au format JSON
@@ -67,7 +67,7 @@ Votre mission : **réaliser une analyse exploratoire des jeux Steam** afin de mi
 
 ---
 
-### Données et technologies utilisées
+### Technologies utilisées
 
 | Outil / Tech       | Rôle                                       |
 |--------------------|--------------------------------------------|
@@ -91,7 +91,7 @@ Votre mission : **réaliser une analyse exploratoire des jeux Steam** afin de mi
 
 ---
 
-### 📚 Source des données
+### Source des données
 
 Données disponibles sur S3 (données internes Jedha) :  
 `s3://full-stack-bigdata-datasets/Big_Data/Project_Steam/steam_game_output.json`
