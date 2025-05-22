@@ -4,16 +4,17 @@
 <p align="center"><strong>One Case Study:</strong></p>
 <p align="center">Big Data Analysis – <em>The Steam Video Games Platform 👾</em></p>
 <br>
-<p>Link to the Databrickx Project: https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/282120262354643/2548154020458300/2219708563440839/latest.html</p>
+
 ---
 
 ### Contexte de l'entreprise
 
-Steam est une plateforme de distribution numérique de jeux vidéo développée par **Valve**, lancée en 2003. Elle permet :
+**Steam** est une plateforme de distribution numérique de jeux vidéo développée par **Valve**, lancée en 2003.  
+Elle permet notamment :
 
-- la gestion des mises à jour et licences (DRM)  
+- la gestion des mises à jour et des licences (DRM)  
 - le jeu en ligne, le cloud gaming, et le stockage de sauvegardes  
-- l’accès à une communauté (chat, messagerie, marketplace)
+- l’accès à une communauté : chat, messagerie, marketplace
 
 Elle héberge des milliers de titres d’éditeurs tiers et indépendants.
 
@@ -21,41 +22,48 @@ Elle héberge des milliers de titres d’éditeurs tiers et indépendants.
 
 ### Objectif du projet
 
-Vous travaillez chez **Ubisoft**, qui prépare la sortie d’un nouveau jeu vidéo révolutionnaire.  
-Votre mission est de **réaliser une EDA approfondie de la marketplace Steam** afin de mieux comprendre :
+Vous travaillez chez **Ubisoft**, qui prépare la sortie d’un nouveau jeu vidéo.  
+Votre mission : **réaliser une analyse exploratoire des jeux Steam** afin de mieux comprendre le marché du jeu vidéo et ses tendances.
 
-- les éditeurs dominants  
-- les genres de jeux les plus populaires  
-- l’évolution du marché mondial  
-- les préférences par plateforme (Windows, Mac, Linux)
+> **Quels éditeurs, genres ou plateformes dominent ? Quels sont les facteurs de popularité ou de succès d’un jeu ?**
 
 ---
 
-### Données utilisées
-=> s3://full-stack-bigdata-datasets/Big_Data/Project_Steam/steam_game_output.json
+### 🖼️ Portée de l’analyse
+
+- Analyse de données issues de la **marketplace Steam**
+- Données semi-structurées stockées au format JSON
+- Utilisation de **PySpark** sur **Databricks** pour :
+  - nettoyer, transformer et agréger les données
+  - créer des visualisations interactives
+- Le dataset contient des informations sur :
+  - les jeux (nom, note, date, genres, éditeur, plateforme…)
+  - leur tarification, les réductions, et les langues
+  - les retours utilisateurs (notes, commentaires)
+
 ---
 
 ### Questions d’analyse proposées
 
-#### Analyse « macro »
+#### Analyse macro
 
-- Quels éditeurs publient le plus ?  
-- Quelles années ont vu un pic de sorties ? (Covid, etc.)  
-- Quelles langues sont les plus fréquentes ?  
-- Quelle est la répartition des prix ?  
-- Quelle part de jeux est interdite aux mineurs ?
+- Quels éditeurs publient le plus de jeux ?
+- Quelles années ont connu le plus de sorties ? (effet Covid ?)
+- Quelle est la distribution des prix ? des remises ?
+- Quelles langues sont les plus représentées ?
+- Quelle part des jeux sont classés 16+/18+ ?
 
 #### Analyse des genres
 
-- Quels genres sont les plus fréquents ?  
-- Quels genres sont les mieux notés ?  
-- Quels genres sont les plus rentables ?  
-- Certains éditeurs ont-ils un genre préféré ?
+- Quels sont les genres les plus populaires ?
+- Les genres les mieux notés ?
+- Les genres les plus rentables ?
+- Certains éditeurs ont-ils des genres favoris ?
 
 #### Analyse des plateformes
 
-- Répartition des jeux par OS (Windows/Mac/Linux)  
-- Existe-t-il des affinités plateforme-genre ?
+- Les jeux sont-ils disponibles sur Windows / Mac / Linux ?
+- Certains genres privilégient-ils une plateforme ?
 
 ---
 
@@ -63,18 +71,30 @@ Votre mission est de **réaliser une EDA approfondie de la marketplace Steam** a
 
 | Outil / Tech       | Rôle                                       |
 |--------------------|--------------------------------------------|
-| **PySpark**        | Traitement des données en cluster          |
-| **Databricks**     | Notebooks + visualisation interactive      |
-| **S3 Bucket**      | Stockage des données (JSON semi-structuré) |
-| `explode()`, `getField()` | Manipulation de champs imbriqués     |
-| `groupBy()`, agrégats | Analyses segmentées par genre/année      |
+| **PySpark**        | Traitement des données volumineuses        |
+| **Databricks**     | Environnement de notebook + visualisation  |
+| **S3 Bucket**      | Stockage des données  |
+| `explode()`, `getField()` | Manipulation de schéma imbriqué     |
+| `groupBy()`, agrégats | Analyses par segment (genre/plateforme)  |
 
 ---
 
 ### Livrables
 
-- Un ou plusieurs **notebooks Databricks** contenant :
-  - le traitement PySpark  
-  - les visualisations intégrées
+- Un **notebook Databricks** publié :
+  - incluant le code PySpark
+  - les graphiques intégrés
+  - les interprétations
+
+📎 Lien vers le notebook Databricks :  
+➡️ [Voir le projet](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/282120262354643/2548154020458300/2219708563440839/latest.html)
 
 ---
+
+### 📚 Source des données
+
+Données disponibles sur S3 (données internes Jedha) :  
+`s3://full-stack-bigdata-datasets/Big_Data/Project_Steam/steam_game_output.json`
+
+---
+
